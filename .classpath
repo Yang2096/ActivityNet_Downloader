@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="E:/KCnCO/Java/Download/libs/commons-logging.jar"/>
+	<classpathentry kind="lib" path="E:/KCnCO/Java/Download/libs/httpclient.jar"/>
+	<classpathentry kind="lib" path="E:/KCnCO/Java/Download/libs/httpcore.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/OpenCV-3.4.0"/>
+	<classpathentry kind="lib" path="E:/KCnCO/Java/project1/libs/commons-cli-1.4.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
