@@ -13,8 +13,8 @@ import util.DownloadLog;
 
 public class Main extends Thread{
 	
-	private static String root = "/home/mcislab3d/ucf_idf/activity_net.v1-3";	//linux
-	private static String databaseFile = "src/util/activity_net_database.json";
+	private static String root = "/home/activity_net.v1-3";	//linux
+	private static String databaseFile = "./activity_net_database.json";
 	private static int threadNum = 3;
     static String strClassName = Main.class.getName();  
     static Logger logger = Logger.getLogger(strClassName);  
@@ -86,7 +86,7 @@ public class Main extends Thread{
 	  	  		System.out.println("已开启视频剪切,注意磁盘容量");
 	  	  	}
 	  	  	if(cmd.hasOption("t")){
-	  	  		databaseFile = "src/util/activity_net_database_test.json";
+	  	  		databaseFile = "./activity_net_database_test.json";
 	  	  	}
 	  	  	if(cmd.hasOption("tn")){
 	  	  		threadNum = Integer.parseInt(cmd.getOptionValue("tn"));
@@ -114,13 +114,13 @@ public class Main extends Thread{
 		usage(args);
 		Main main1 = new Main();
 		main1.setHook();
-		Properties prop = System.getProperties();
+/*		Properties prop = System.getProperties();
 		// 设置http访问要使用的代理服务器的地址
 		prop.setProperty("http.proxyHost", "127.0.0.1");
 		// 设置http访问要使用的代理服务器的端口
-		prop.setProperty("http.proxyPort", "1080");
+		prop.setProperty("http.proxyPort", "1080");*/
 		DecodeJson decodeJson = new DecodeJson();
-		CreatePath path = new CreatePath(decodeJson.readTaxonomy("src/util/activity_net_taxonomy.json"));
+		CreatePath path = new CreatePath(decodeJson.readTaxonomy("./activity_net_taxonomy.json"));
 		path.pathCreating(root);
 		ArrayList<VideoInfo> videoInfos = decodeJson.readDatabase(databaseFile);
 		System.out.println("Total videos: "+Integer.toString(videoInfos.size()));
